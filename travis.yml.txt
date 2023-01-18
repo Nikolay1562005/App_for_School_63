@@ -31,17 +31,6 @@ install:
   - ls bin/ -l
   - echo "TODO"
   - gem install dpl --pre
-  - dpl releases --token $GITHUB_TOKEN --file "bin/mortgagecalculator-2.3-armeabi-v7a-debug.apk" --tag_name "v.1.0"
-  - echo "TODO COMPILE 64bit"
-  - ls -la
-  - rm -r -f .buildozer
-  - ls -la
-  - yes | cp -f buildozer-64bit.spec buildozer.spec
-  - yes | travis_wait 20 buildozer android debug
-  - ls -la
-  - ls bin/ -l
-  - echo "TODO"
-  - gem install dpl --pre
-  - dpl releases --token $GITHUB_TOKEN --file "bin/mortgagecalculator-2.3-arm64-v8a-debug.apk" --tag_name "v.1.0"
+  - dpl releases --token $GITHUB_TOKEN --file "bin/School 63 schedule-1.0-armeabi-v7a-debug.apk" --tag_name "v.1.0"
 script:
   - echo "OK"
