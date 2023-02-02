@@ -1,0 +1,160 @@
+#:kivy 2.1.0
+
+<ItemLabel@Label>:
+    font_size: '18sp'
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size
+    color: 1, 1, 1, 1
+    text_color: self.color
+<start>:
+    Image:
+        source: 'data\\background.png'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 5
+        spacing: 5
+        BoxLayout:
+            spacing: 5
+            size_hint: 1, 0.13
+            Spinner:
+                id: spin
+                text: 'Выберите класс'
+                font_size: '28sp'
+                values: ''
+                on_press: root.class_school()
+                on_text: root.clicked(spin.text)
+                background_normal: ''
+                background_color: 0, 1, 0, 1
+            Button:
+                text: 'Обновить \n данные'
+                font_size: '24sp'
+                size_hint: 0.45, 1
+                on_press: root.update_data()
+                background_normal: ''
+                background_color: 0, 1, 0, 1
+        BoxLayout:
+            size_hint: 1, 0.1
+            spacing: 10
+            Button:
+                text: '<'
+                font_size: '28sp'
+                on_release: root.yesterday()
+                size_hint: 0.45, 1
+                background_normal: ''
+                background_color: 0, 1, 0, 1
+            Label:
+                id: day_label
+                text: 'День недели'
+                font_size: '28sp'
+                size_hint: 1, 1
+                background_normal: ''
+                background_color: 0, 1, 0, 1
+            Button:
+                text: '>'
+                font_size: '28sp'
+                size_hint: 0.45, 1
+                on_press: root.tomorrow()
+                background_normal: ''
+                background_color: 0, 1, 0, 1
+
+        GridLayout:
+            cols: 3
+            rows: 8
+            Label:
+                text: '№'
+                size_hint: 0.2, 0.5
+                color: 1, 1, 1, 1
+                font_size: '22sp'
+            Label:
+                text: 'Звонки'
+                font_size: '22sp'
+                size_hint: 0.22, 0.5
+            Label:
+                text: 'Уроки'
+                size_hint: 1, 0.5
+                font_size: '22sp'
+            Label:
+                text: '1'
+                size_hint: 0.2, 1
+                color: 1, 1, 1, 1
+                font_size: '22sp'
+            ItemLabel:
+                id: l_1
+                text: ''
+                size_hint: 0.22, 1
+            ItemLabel:
+                id: l_2
+                text: ''
+            Label:
+                text: '2'
+                size_hint: 0.2, 1
+                color: 1, 1, 1, 1
+                font_size: '22sp'
+            ItemLabel:
+                id: l_3
+                text: ''
+                size_hint: 0.22, 1
+            ItemLabel:
+                id: l_4
+                text: ''
+            Label:
+                text: '3'
+                size_hint: 0.2, 1
+                color: 1, 1, 1, 1
+                font_size: '22sp'
+            ItemLabel:
+                id: l_5
+                text: ''
+                size_hint: 0.22, 1
+            ItemLabel:
+                id: l_6
+                text: ''
+            Label:
+                text: '4'
+                size_hint: 0.2, 1
+                color: 1, 1, 1, 1
+                font_size: '22sp'
+            ItemLabel:
+                id: l_7
+                text: ''
+                size_hint: 0.22, 1
+            ItemLabel:
+                id: l_8
+                text: ''
+            Label:
+                text: '5'
+                size_hint: 0.2, 1
+                color: 1, 1, 1, 1
+                font_size: '22sp'
+            ItemLabel:
+                id: l_9
+                text: ''
+                size_hint: 0.22, 1
+            ItemLabel:
+                id: l_10
+                text: ''
+            Label:
+                text: '6'
+                size_hint: 0.2, 1
+                color: 1, 1, 1, 1
+                font_size: '22sp'
+            ItemLabel:
+                id: l_11
+                text: ''
+                size_hint: 0.22, 1
+            ItemLabel:
+                id: l_12
+                text: ''
+            Label:
+                text: '7'
+                size_hint: 0.2, 1
+                color: 1, 1, 1, 1
+                font_size: '22sp'
+            ItemLabel:
+                id: l_13
+                text: ''
+                size_hint: 0.22, 1
+            ItemLabel:
+                id: l_14
+                text: ''
