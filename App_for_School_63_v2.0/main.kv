@@ -1,0 +1,108 @@
+#: kivy 2.2.0
+<DrawerClickableItem@MDNavigationDrawerItem>
+    focus_color: "#e7e4c0"
+    text_color: "#4a4939"
+    icon_color: "#4a4939"
+    ripple_color: "#c5bdd2"
+    selected_color: "#0c6c4d"
+
+
+<DrawerLabelItem@MDNavigationDrawerItem>
+    text_color: "#4a4939"
+    icon_color: "#4a4939"
+    focus_behavior: False
+    selected_color: "#4a4939"
+    _no_ripple_effect: True
+<StartScreen>:
+    MDNavigationLayout:
+
+        MDScreenManager:
+
+            MDScreen:
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+
+                    MDTopAppBar:
+                        id: topappbar
+                        use_overflow: True
+                        #md_bg_color: 'green'    # indigo
+                        title: "Рассписание по классам"
+                        anchor_title: "left"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+                        right_action_items: [["update", lambda x: app.update()], ["dots-vertical", lambda x: app.settings(x)]]
+
+                    MDTabs:
+                        id: tabs_classes
+                        on_tab_switch: app.on_tab_switch(*args)
+                        tab_indicator_anim: True
+                        lock_swiping: True # блокировка анимации
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            radius: (0, 16, 16, 0)
+
+            MDNavigationDrawerMenu:
+
+                MDNavigationDrawerHeader:
+                    title: "автор: Шмыков Н.Н."
+                    title_color: "#4a4939"
+                    source: "data/logo/профиль.jpg"
+                    text: ""
+                    spacing: "4dp"
+                    padding: "12dp", 0, 0, "56dp"
+
+                MDNavigationDrawerLabel:
+                    text: "Мои контакты"
+
+                DrawerClickableItem:
+                    icon: "gmail"
+                    # right_text: "+99"
+                    text_right_color: "#4a4939"
+                    text: "kolasmykov20056@mail.ru"
+
+                DrawerClickableItem:
+                    icon: "github"
+                    text_right_color: "#4a4939"
+                    text: "Nikolay1562005"
+                    on_press: app.open_github()
+
+                DrawerClickableItem:
+                    icon: "send"
+                    text: "@kolya_shmykov"
+                    on_press: app.open_telegram()
+
+                DrawerClickableItem:
+                    icon: "folder"
+                    text_right_color: "#4a4939"
+                    text: "Ссылка на проект"
+
+                DrawerClickableItem:
+                    icon: "google-play"
+                    text_right_color: "#4a4939"
+                    text: "Ссылка на скачивание"
+
+
+
+<TabClasses>
+    MDTabs:
+        id: tabs_day_week
+        on_tab_switch: app.on_datatable(*args)
+        # tab_indicator_height: '10dp'
+        # text_color_normal: 1, 1, 1, 1
+        # text_color_active: 'red'
+        # indicator_color: 'indigo'
+        tab_indicator_anim: True
+
+
+<TabDayWeek>
+    MDBanner:
+        text: ["One line string text example without actions."]
+        left_action: ["CANCEL", lambda x: None]
+        right_action: ["CLOSE", lambda x: None]
+        opening_time: 1
+    #Image:
+    #    id: image
+    #    source: r'C:\Users\Пользователь\Pictures\Картинки для фонов\astronaut-uhdpaper.com-4K-4.34.jpg'
+    #    allow_stretch: True
+    #    keep_ratio: False
